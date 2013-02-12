@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <title>video.js late load</title>
+</head>
+<body>
+<script>
+var
+  link = document.createElement('link'),
+  script = document.createElement('script');
+
+link.href = 'http://vjs.zencdn.net/c/video-js.css';
+link.rel = 'stylesheet';
+document.body.appendChild(link);
+
+script.src = 'http://vjs.zencdn.net/c/video.js';
+script.onload = function() {
+  var video = document.createElement('video');
+  video.id = 'video';
+  video.src = 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4';
+  video.setAttribute('poster', 'http://video-js.zencoder.com/oceans-clip.jpg');
+  video.setAttribute('controls', 'true');
+  video.setAttribute('class', 'video-js vjs-default-skin');
+  document.body.appendChild(video);
+  _V_('video'); 
+};
+document.body.appendChild(script);
+</script>
+</body>
+</html>
