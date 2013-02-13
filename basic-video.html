@@ -10,7 +10,7 @@
 </video>
 <script>
 window.addEventListener('message', function() {
-  window.postMessage(JSON.stringify(window.performance), '*');
+  window.parent.postMessage(JSON.stringify(window.performance), '*');
 }, false);
 </script>
 </body>
