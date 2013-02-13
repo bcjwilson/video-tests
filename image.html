@@ -5,5 +5,10 @@
 </head>
 <body>
 <img id='poster' src='http://video-js.zencoder.com/oceans-clip.jpg'>
+<script>
+window.addEventListener('message', function() {
+  window.parent.postMessage(JSON.stringify(window.performance), '*');
+}, false);
+</script>
 </body>
 </html>

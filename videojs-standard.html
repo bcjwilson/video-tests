@@ -12,5 +12,10 @@
   src='http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'
   controls>
 </video>
+<script>
+window.addEventListener('message', function() {
+  window.parent.postMessage(JSON.stringify(window.performance), '*');
+}, false);
+</script>
 </body>
 </html>

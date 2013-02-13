@@ -26,5 +26,10 @@ script.onload = function() {
 };
 document.body.appendChild(script);
 </script>
+<script>
+window.addEventListener('message', function() {
+  window.parent.postMessage(JSON.stringify(window.performance), '*');
+}, false);
+</script>
 </body>
 </html>
