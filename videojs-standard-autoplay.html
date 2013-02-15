@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Video Element - Performance</title>
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
+</head>
+<body>
+<video
+  id="video"
+  data-setup="{}"
+  class='video-js vjs-default-skin'
+  src='http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'
+  controls>
+</video>
+<script>
+window.addEventListener('message', function() {
+  window.parent.postMessage(JSON.stringify(window.performance), '*');
+}, false);
+_V_('video').play();
+</script>
+</body>
+</html>

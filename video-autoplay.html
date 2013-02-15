@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title>Video Element - Performance</title>
+</head>
+<body>
+<video
+  id="video"
+  src='http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'
+  controls>
+</video>
+<script>
+window.addEventListener('message', function() {
+  window.parent.postMessage(JSON.stringify(window.performance), '*');
+}, false);
+document.getElementById('video').play();
+</script>
+</body>
+</html>
